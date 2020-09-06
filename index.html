@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+    <title>Messaging App</title>
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            color: white;
+            font-family: "Poppins", sans-serif;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus,
+        button:focus {
+            outline: none;
+        }
+
+        #message-container {
+            width: 80%;
+            max-width: 1200px;
+            padding: 5%;
+        }
+
+        #message-container div {
+            background-color: #ff7650;
+            padding: 5px;
+        }
+
+        #message-container div:nth-child(2n) {
+            background-color: #ff9d82;
+        }
+
+        #send-container {
+            position: fixed;
+            padding-bottom: 30px;
+            bottom: 0;
+            max-width: 1200px;
+            width: 80%;
+            display: flex;
+        }
+
+        #message-input {
+            flex-grow: 1;
+            font-size: 1.5rem;
+        }
+
+        #send-button {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #ff6f47;
+            color: white;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+
+        #send-button:hover {
+            background: #ff6f47;
+            color: white;
+
+        }
+
+        header {
+            position: absolute;
+            padding-left: 15px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 id="header">Chat Room</h1>
+    </header>
+    <div id="message-container"></div>
+    <form id="send-container">
+        <input type="text" spellcheck="false" id="message-input">
+        <button type="submit" id="send-button">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </form>
+</body>
+
+<!--
+    This website was created by Torin Stephen using node and socket.io
+-->
+
+</html>
